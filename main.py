@@ -6,14 +6,16 @@ from view.model_view import *
 
 
 if __name__ == '__main__':
-    show = User()
-    show.checkout()
+    show = View()
+    show1 = Model_User()
     user_choice = ""
-    while user_choice !="q":
-        user_choice = input("tapez (a) pour acceder a votre compte ou (b) pour creer un compte:")
-        choice = User()
 
-    if user_choice == "a":
-        show.checkout()
-        user_choice = input("tapez (a) pour acceder a votre compte ou (b) pour creer un compte:")
-        pass
+    while user_choice != "q":
+        user_choice = input("tapez (a) pour acceder a votre compte ou (b) pour creer un compte ,q:")
+        if user_choice == "b":
+            show.to_create_account()
+        if user_choice == "a":
+            show1.checkout()
+        if user_choice == "q":
+            print("a bientot")
+            exit()
