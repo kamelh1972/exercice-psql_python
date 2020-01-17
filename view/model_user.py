@@ -17,10 +17,12 @@ class Model_User():
         for raw in raws:
             if raw[0] == self.pseudo and raw[1] == self.password:
                 kamel= True
-                return raws
-                break
+                print(kamel)
         self.conn.close_connection()
-        return kamel
 
-    def show_account(self):
-        pass
+
+    def show_account(self,account):
+
+        self.account = account
+        self.conn.initialize_connection()
+        self.conn.cursor.execute()
