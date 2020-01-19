@@ -2,6 +2,7 @@ from model.connection import *
 
 
 
+
 class User():
     """class  """
     def __init__(self):
@@ -12,6 +13,14 @@ class User():
         self.email = None
         self.age = None
         self.password = None
+
+    def checkout(self):
+
+        self.conn.initialize_connection()
+        self.conn.cursor.execute("SELECT pseudo, password FROM users WHERE pseudo = %s AND password= %s;"(pseudo,password,))
+        result = self.conn.cursor.fetchall()
+        self.conn.close_connection()
+        return result
 
     def to_create_account(self):
         self.name = input("veuillez renseignez votre name")
